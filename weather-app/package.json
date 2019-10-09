@@ -1,0 +1,26 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Node.js weather app via Dark Sky API",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattMan569/The-Complete-Node.js-Developer-Course/tree/master/weather-app"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "Matthew Polsom",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-google": "^0.14.0"
+  }
+}
