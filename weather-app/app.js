@@ -1,12 +1,23 @@
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
-geocode('regina', (error, data) => {
-    console.error('Error', error);
-    console.log('Data', data);
-});
+const address = process.argv.slice(2).join(' ');
 
-forecast(-104.6158, 50.4481, (error, data) => {
-    console.error('Error', error);
-    console.log('Data', data);
+if (!address) {
+    return console.error('No location provided!');
+}
+
+geocode(address, (error, geocodeData) => {
+    if (error) {
+        return console.error('Error', error);
+    }
+
+    forecast(geocodeData.longitude, geocodeData.latitude, (error, forecastData) => {
+        if (error) {
+            return console.error('Error', error);
+        }
+
+        console.log(geocodeData.location);
+        console.log(forecastData);
+    });
 });
